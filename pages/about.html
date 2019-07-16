@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PulmonDB - About</title>
+<link href="../clustergrammer-master/lib/css/bootstrap.css" rel="stylesheet">
+<link href="../css/style3.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Dosis|Pragati+Narrow|Quicksand" rel="stylesheet">
+
+</head>
+<body>
+	<div id="main" class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 navigation" style="margin-top: 40px">
+				<div class="col-md-1"></div>
+				<div class="col-md-2">
+					<img src="../images/PulmonDB.png" style="vertical-align: middle;" width="90%">
+				</div>
+
+				<div class="col-md-2">
+
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="../index.html">
+						Home
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="../GSE_selection.html">
+						Input Data
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="about.html">
+						About
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="help.html">
+						Help
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="lung_diseases.html">
+						Lung Diseases
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="contact_us.html">
+						Contact us
+					</a>
+				</div>
+
+				<div class="col-md-1"></div>
+			</div>
+
+
+
+
+		<div class="divform" style="margin-top: 10%; background: url(../images/back2.png); background-color:; height: ; width: 100%; max-width: 1400px; background-size: cover; background-repeat: no-repeat; background-position: center;">
+		
+		
+				<div class="col-md-12" style="margin-top: 5%;">
+					<div class="col-md-3"></div>
+
+					<div class="col-md-5" style="width: 100%;">
+						<h1 class="titles">
+							PulmonDB
+						</h1>
+						<br>
+						<br>
+						<br>
+
+						<p style="font-family: 'Pragati Narrow', sans-serif; text-align: justify; ;">
+
+							In order to integrate published transcriptomic data from different sources,
+							we used an approach previously described <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0020938">(1)</a>
+							to create <a href="http://colombos.net/">COLOMBOS</a>  and <a href="http://vespucci.colombos.fmach.it//">VESPUCCI</a> databases.
+							This approach allows cross-platforms integration of gene expression public data.
+							Raw data was downloaded from <a href="https://www.ncbi.nlm.nih.gov/geo/">GEO</a>
+							and  <a href="https://jhubiostatistics.shinyapps.io/recount/">Recount2</a>.
+							We manually curated each individual sample using the information
+							provided in <a href="https://www.ncbi.nlm.nih.gov/geo/">GEO</a> and in its related paper(s).
+							<br>
+							<br>
+							Each expression value displayed in the data base is a contrast between the samples
+							 and the corresponding control.
+<br>
+<br>
+
+							 Sample contrasts:
+							 <br>
+							 Engelen, et al. defined a condition contrast (in our case sample contrast)
+				 			as the logarithmic difference between a test and a selected reference.
+				 			This reference is randomly selected from the control group and used to contrast all samples from that experiment.
+
+							<br>
+							<br>
+							<br>
+							<br>
+
+						</p>
+					</div>
+
+					<div class="col-md-3"></div>
+				</div>
+			
+		
+
+
+						<div class="col-md-12">
+							<img src="../images/flowchart_db.png" class="centerImg">
+						</div>
+
+
+			<div class="col-md-12">
+				<img src="../images/contrast_s.png" class="centerImg">
+			</div>
+
+			<br>
+			<br>
+			<br>
+
+				<div class="col-md-12" style="margin-top: 50px">
+					<div class="col-md-3"></div>
+
+					<div class="col-md-5" style="width: 100%">
+						<h1 class="titles">
+							Visualization
+						</h1>
+						<br>
+						<br>
+						<br>
+
+						<p style="font-family: 'Pragati Narrow', sans-serif; text-align: justify;">
+
+							We used <a href="https://clustergrammer.readthedocs.io/index.html">Clustergrammer</a>
+							developed by the Ma’ayan lab at the Icahn School of Medicine at Mount for heatmaps visualization.
+							This tool allows interactive visualization from PumonDB data,
+							and it is connected to <a href="http://amp.pharm.mssm.edu/Enrichr/">Enrichr</a>
+							for a gen set enrichment analysis.
+
+				</p> 
+				<br><br><br>
+					</div>
+
+				</div>
+
+				<div class="col-md-12">
+					<img src="../images/clustergrammer.png" class="centerImg">
+				</div>
+
+			</div>
+
+		</div>
+		</div>
+
+		</div>
+
+
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../clustergrammer-master/lib/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,187 @@
+/*
+    Created on : Mar 20, 2018, 11:00:49 PM
+    Author     : jsgarcia
+*/
+
+.textDescription {
+        width: 90%;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px; font-style: normal;
+	color: #111; /* #336699 */
+        text-align : justify;
+	font-weight: bold;
+}
+
+.tableSeparation{
+    width: 100%;
+    height: 23px;
+    border: 0;
+    background-color: #093d72;
+}
+
+
+
+.divform{
+    width: 833px;
+    height: 588px;
+    margin-left: 60px;
+    background: url(../images/input.png);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputTitle {
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    font-size: 24px;
+}
+
+.btnSubmit {
+    position: relative;
+    color: white;
+    float: right;
+    margin-right: 40px;
+    font-family: 'Dosis', sans-serif;
+    border-radius: 15px;
+    height: 40px;
+    width: 120px;
+    border-color: rgb(249,80,80);
+    font-size: 17px;
+    background-color: rgb(249,80,80);
+}
+
+.btnDemo{
+    position: relative;
+    color: white;
+    float: right;
+    margin-right: 40px;
+    font-family: 'Dosis', sans-serif;
+    border-radius: 15px;
+    height: 40px;
+    width: 120px;
+    border-color: rgb(249,80,80);
+    font-size: 17px;
+    background-color: rgb(249,80,80);
+}
+
+.navigation {
+        vertical-align: middle;
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+a:hover {
+    text-decoration: none;
+   
+    color: #046baa;
+}
+
+p {
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+button:hover {
+    background-color: rgba(249,80,80,0.5);
+}
+
+.titles {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 120px;
+}
+
+
+
+.headshots {
+    position: absolute;
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top-left {
+    position: absolute;
+    top: 2%;
+    left: 10%;
+}
+
+.subtitles {
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    /*font-size: 120px;*/
+}
+
+.centerImg {
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 100px;
+}
+
+
+
+div.centerDiv
+{
+    text-align: left;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.centerDivExplorer
+{
+  
+  text-align: center;
+}
+
+.box1 {
+    position: relative;
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: ;
+  color: white;
+  text-align: center;
+  float:left;
+display:inline;
+}
+
+.footer img{
+    width: 8%;
+    padding-right: 2%;
+
+}

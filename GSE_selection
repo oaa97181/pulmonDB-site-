@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PulmonDB(GSEXX)</title>
+</head>
+<body>
+<form action="/cgi-bin/heatmap.py" method="get">
+GSE: <input type="text" name="gse">  <br />
+
+GENE: <input type="text" name="gene" />
+<input type="submit" value="Search" />
+</form>
+</body>
+</html>

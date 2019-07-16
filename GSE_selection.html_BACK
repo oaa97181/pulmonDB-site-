@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PulmonDB(GSEXX)</title>
+<link href="clustergrammer-master/lib/css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Dosis|Quicksand" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+
+<body>
+
+
+
+	<div id="main" class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 navigation" style="margin-top: 40px">
+				<div class="col-md-1"></div>
+				<div class="col-md-2">
+					<img src="images/PulmonDB.png" style="vertical-align: middle;" width="90%">
+				</div>
+
+				<div class="col-md-4">
+
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="index.html">
+						Home
+					</a>
+				</div>
+
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="GSE_selection.html">
+						Input Data
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="pages/about.html">
+						About
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="pages/help.html">
+						Help
+					</a>
+				</div>
+
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="pages/lung_diseases.html">
+						Lung Diseases
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="pages/contact_us.html">
+						Contact us
+					</a>
+				</div>
+
+				<div class="col-md-1"></div>
+			</div>
+		</div>
+
+		<div class="divform" style="margin-top: 100px">
+			<div style="padding-left: 15px">
+				<div>
+					<form action="../cgi-bin/heatmap.py" method="post">
+						<br>
+						<div class="inputTitle">
+							GSE:
+						</div>
+
+						<textarea  rows="4" style="width:90%; border-radius: 10px; height: 72px" name="gse"></textarea>
+
+
+
+						<br>
+						<br>
+						<div class="inputTitle">
+							GENE:
+						</div>
+
+	 					<textarea  rows="4" style="width:90%; border-radius: 10px; height: 72px" name="gene"></textarea>
+
+						<br>
+						<br>
+
+						<input class="btnSubmit" type="submit" value="Submit" />
+					</form>
+				</div>
+ 			</div>
+ 		</div>
+	</div>
+
+
+
+
+	<script src="https://unpkg.com/vue@latest"></script>
+<script src="https://unpkg.com/vue-multiselect@2.1.0"></script>
+<link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
+	<script>
+Vue.component('vue-multiselect', window.VueMultiselect.default)
+	</script>
+
+
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="clustergrammer-master/lib/js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
+
+											<table class="table table-bordered table-hover table-condensed" id="myTable">
+											<thead><tr><th title="Field #1">GEO Serie ID</th>
+											<th title="Field #2">Pubmed ID related</th>
+											<th title="Field #3">Table Ana Disease</th>
+											<th title="Field #4">Sample type</th>
+											<th title="Field #5">Total of samples</th>
+											<th title="Field #6">Contrasts</th>
+											<th title="Field #7">GEO Platform ID</th>
+											<th title="Field #8">Record Desciption</th>
+											</tr></thead>
+											<tbody><tr>
+											<td>GSE994</td>
+											<td>15210990</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">75</td>
+											<td align="right">74</td>
+											<td>GPL96</td>
+											<td>Effects of cigarette smoke on the human airway epithelial cell transcriptome</td>
+											</tr>
+											<tr>
+											<td>GSE1122</td>
+											<td>15284076</td>
+											<td>COPD</td>
+											<td>Lung Tissue</td>
+											<td align="right">15</td>
+											<td align="right">14</td>
+											<td>GPL80</td>
+											<td>Emphysema Lung Tissue Gene Expression Profiling</td>
+											</tr>
+											<tr>
+											<td>GSE1650</td>
+											<td>15374838</td>
+											<td>COPD</td>
+											<td>Lung tissue</td>
+											<td align="right">30</td>
+											<td align="right">29</td>
+											<td>GPL96</td>
+											<td>COPD Study</td>
+											</tr>
+											<tr>
+											<td>GSE2125</td>
+											<td>16166618</td>
+											<td>COPD</td>
+											<td>Alveolar macrophage</td>
+											<td align="right">45</td>
+											<td align="right">44</td>
+											<td>GPL570</td>
+											<td>Isolated alveolar macrophages</td>
+											</tr>
+											<tr>
+											<td>GSE1786</td>
+											<td>16260967</td>
+											<td>-</td>
+											<td>Vastus lateralis muscle</td>
+											<td align="right">24</td>
+											<td align="right">22</td>
+											<td>GPL96</td>
+											<td>Vastus lateralis biopsies from healthy trained and sedentary males</td>
+											</tr>
+											<tr>
+											<td> </td>
+											<td> </td>
+											<td> </td>
+											<td> </td>
+											<td align="right"></td>
+											<td align="right"></td>
+											<td> </td>
+											<td> </td>
+											</tr>
+											<tr>
+											<td>GSE7557</td>
+											<td>17965775</td>
+											<td>COPD</td>
+											<td>Human bronchial epithelial cells</td>
+											<td align="right">3</td>
+											<td align="right">3</td>
+											<td>GPL5102</td>
+											<td>Human bronchial epithelial cells_Passage 3 vs. passage 0</td>
+											</tr>
+											<tr>
+											<td>GSE6804</td>
+											<td>17986007</td>
+											<td>IPF</td>
+											<td>Myofibroblasts</td>
+											<td align="right">3</td>
+											<td align="right">2</td>
+											<td>GPL201</td>
+											<td>Expression data of myofibroblast isolated from patients with idiopathic pulmonary fibrosis</td>
+											</tr>
+											<tr>
+											<td>GSE8608</td>
+											<td>18084737</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">6</td>
+											<td align="right">5</td>
+											<td>GPL570</td>
+											<td>MDM from COPD patients and healthy subjects after treatment with LPS or fine and ultrafine particles</td>
+											</tr>
+											<tr>
+											<td>GSE10896</td>
+											<td>18421014</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">24</td>
+											<td align="right">22</td>
+											<td>GPL570</td>
+											<td>Impact of curcumin on human monocytes (U937 cells) exposed to oxidative stress</td>
+											</tr>
+											<tr>
+											<td>GSE5457</td>
+											<td>18621908</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">8</td>
+											<td align="right">7</td>
+											<td>GPL96</td>
+											<td>Retinoic Acids Exposure Alters TGFbeta1 -Induced Epithelial Mesenchymal Transition via Wnt5b expression.</td>
+											</tr>
+											<tr>
+											<td>GSE11196</td>
+											<td>18795102</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">48</td>
+											<td align="right">44</td>
+											<td>GPL6732</td>
+											<td>Fibrotic Myofibroblasts Manifest Genome-Wide Derangements of Translational Control</td>
+											</tr>
+											<tr>
+											<td>GSE8581</td>
+											<td>18849563</td>
+											<td>COPD</td>
+											<td>Lung tissue</td>
+											<td align="right">58</td>
+											<td align="right">58</td>
+											<td>GPL570</td>
+											<td>Human Chronic Obstructive Pulmonary Disorder (COPD) Biomarker</td>
+											</tr>
+											<tr>
+											<td>GSE10038</td>
+											<td>19605697</td>
+											<td>COPD</td>
+											<td>Alveolar macrophage</td>
+											<td align="right">11</td>
+											<td align="right">10</td>
+											<td>GPL570</td>
+											<td>Upregulation of Expression of Matrix Metalloproteinases in Alveolar Macrophages of HIV1+ Smokers with Early Emphysema</td>
+											</tr>
+											<tr>
+											<td>GSE13896</td>
+											<td>19635926</td>
+											<td>COPD</td>
+											<td>Alveolar macrophage</td>
+											<td align="right">70</td>
+											<td align="right">69</td>
+											<td>GPL570</td>
+											<td>Smoking-dependent Reprogramming of Alveolar Macrophage Polarization: Implication for Pathogenesis of COPD</td>
+											</tr>
+											<tr>
+											<td>GSE15197</td>
+											<td>20081107</td>
+											<td>IPF</td>
+											<td>Lung tissue</td>
+											<td align="right">39</td>
+											<td align="right">38</td>
+											<td>GPL6480</td>
+											<td>RNA Expression Profiling of Lung Tissue Identifies Mutually Distinct Molecular Signatures in PAH and PH Secondary to IPF</td>
+											</tr>
+											<tr>
+											<td>GSE19976</td>
+											<td>20194811</td>
+											<td>IPF</td>
+											<td>Lung tissue</td>
+											<td align="right">15</td>
+											<td align="right">14</td>
+											<td>GPL6244</td>
+											<td>Gene expression analysis of lung biopsies from patients with two different forms of pulmonary sarcoidosis</td>
+											</tr>
+											<tr>
+											<td>GSE12815</td>
+											<td>20375364</td>
+											<td>COPD</td>
+											<td>Normal airway epithelial samples??</td>
+											<td align="right">71</td>
+											<td align="right">67</td>
+											<td>4 different platforms?</td>
+											<td>PI3K pathway activity in the normal airway of smokers with lung cancer, and in smokers with airway dysplasia</td>
+											</tr>
+											<tr>
+											<td>GSE21369</td>
+											<td>21241464</td>
+											<td>IPF</td>
+											<td>Lung tissue</td>
+											<td align="right">29</td>
+											<td align="right">28</td>
+											<td>GPL570</td>
+											<td>Gene expression profiles of interstitial lung disease (ILD) patients</td>
+											</tr>
+											<tr>
+											<td>GSE48149</td>
+											<td>21360508</td>
+											<td>IPF</td>
+											<td>Lung tissue</td>
+											<td align="right">53</td>
+											<td align="right">52</td>
+											<td>GPL16221</td>
+											<td>Lung tissues in systemic sclerosis have gene expression patterns unique to pulmonary fibrosis and pulmonary hypertension</td>
+											</tr>
+											<tr>
+											<td>GSE16972</td>
+											<td>21430361</td>
+											<td>COPD</td>
+											<td>BAL</td>
+											<td align="right">12</td>
+											<td align="right">11</td>
+											<td>GPL96</td>
+											<td>COPD-Specific Gene Expression Signatures of Alveolar Macrophages as well as Peripheral Blood Monocytes Overlap and Correlate with Lung Function</td>
+											</tr>
+											<tr>
+											<td>GSE26594</td>
+											<td>21632719</td>
+											<td>IPF</td>
+											<td>Primary lung fibroblast</td>
+											<td align="right">6</td>
+											<td align="right">5</td>
+											<td>GPL570</td>
+											<td>Increased Cell Surface Fas Expression is Necessary to Sensitize Lung Fibroblasts to Fas Ligation-Induced Apoptosis: Implications for Fibroblast Accumulation in Idiopathic Pulmonary Fibrosis.</td>
+											</tr>
+											<tr>
+											<td>GSE27536</td>
+											<td>21909251</td>
+											<td>COPD</td>
+											<td>Muscle biopsies</td>
+											<td align="right">54</td>
+											<td align="right">53</td>
+											<td>GPL570</td>
+											<td>Vastus lateralis biopsies from healthy and COPD patients before and after 8 weeks of exercise training</td>
+											</tr>
+											<tr>
+											<td>GSE27543</td>
+											<td>21909251</td>
+											<td>COPD</td>
+											<td>Muscle biopsies</td>
+											<td align="right">16</td>
+											<td align="right">15</td>
+											<td>GPL201</td>
+											<td>Vastus lateralis biopsies from healthy and COPD patients before and after 3 weeks of endurance training</td>
+											</tr>
+											<tr>
+											<td>GSE24206</td>
+											<td>21974901</td>
+											<td>IPF</td>
+											<td>Lung tissue</td>
+											<td align="right">23</td>
+											<td align="right">22</td>
+											<td>GPL570</td>
+											<td>Validated Gene Expression Signatures of Idiopathic Pulmonary Fibrosis</td>
+											</tr>
+											<tr>
+											<td>GSE23704</td>
+											<td>22204820</td>
+											<td>COPD</td>
+											<td>BAL</td>
+											<td align="right">2</td>
+											<td align="right">1</td>
+											<td>GPL570</td>
+											<td>Gene expression profiling on bronchoalveolar lavage (BAL) cells treated with all-trans-retinoic acid (ATRA)</td>
+											</tr>
+											<tr>
+											<td>GSE26296</td>
+											<td>22261033</td>
+											<td>COPD</td>
+											<td>Lung myeloid dendritic cells isolated from lungs</td>
+											<td align="right">6</td>
+											<td align="right">5</td>
+											<td>GPL6884</td>
+											<td>Genome-wide analysis of lung myeloid dendritic cells gene expression from healthy or emphysema subjects</td>
+											</tr>
+											<tr>
+											<td>GSE35145</td>
+											<td>22700861</td>
+											<td>IPF</td>
+											<td>Lung tissue</td>
+											<td align="right">8</td>
+											<td align="right">7</td>
+											<td>GPL10558</td>
+											<td>Gene expression changes in IPF</td>
+											</tr>
+											<tr>
+											<td>GSE33566</td>
+											<td>22761659</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">123</td>
+											<td align="right">122</td>
+											<td>GPL6480</td>
+											<td>The Peripheral Blood Transcriptome Predicts the Presence and Extent of Disease in Idiopathic Pulmonary Fibrosis</td>
+											</tr>
+											<tr>
+											<td>GSE40885</td>
+											<td>22952057</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">14</td>
+											<td align="right">13</td>
+											<td>GPL570</td>
+											<td>Data expression in alveolar macrophages induced by lipopolysaccharide in humans</td>
+											</tr>
+											<tr>
+											<td>GSE38934</td>
+											<td>23025845</td>
+											<td>IPF/COPD</td>
+											<td> </td>
+											<td align="right">6</td>
+											<td align="right">5</td>
+											<td>GPL570</td>
+											<td>Gene expression profiling of lung tissues from patients with combined pulmonary fibrosis and emphysema</td>
+											</tr>
+											<tr>
+											<td>GSE29133</td>
+											<td>23117565</td>
+											<td>COPD</td>
+											<td>Alveolar epithelial type II (ATII) cells</td>
+											<td align="right">6</td>
+											<td align="right">5</td>
+											<td>GPL570</td>
+											<td>Transcriptome in alveolar epithelial type II cells isolated from normal and COPD lungs of adult human</td>
+											</tr>
+											<tr>
+											<td>GSE37693</td>
+											<td>23187130</td>
+											<td>COPD</td>
+											<td>Primary culture airway epithelial cells</td>
+											<td align="right">8</td>
+											<td align="right">7</td>
+											<td>GPL6947</td>
+											<td>Gene Expression Effects of IL-13 on Primary Human Airway Epithelial Cells</td>
+											</tr>
+											<tr>
+											<td>GSE37147</td>
+											<td>23471465</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">269</td>
+											<td align="right">269</td>
+											<td>GPL13243</td>
+											<td>Bronchial airway gene expression reflects a COPD-associated field of injury that changes with disease severity and is reversible with therapy</td>
+											</tr>
+											<tr>
+											<td>GSE44723</td>
+											<td>23565148</td>
+											<td>IPF</td>
+											<td>Cultured fibroblasts</td>
+											<td align="right">14</td>
+											<td align="right">12</td>
+											<td>GPL570</td>
+											<td>Bleomycin induces molecular changes directly relevant to idiopathic pulmonary fibrosis: A model for “active” disease</td>
+											</tr>
+											<tr>
+											<td>GSE45251</td>
+											<td>23590298</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">16</td>
+											<td align="right">15</td>
+											<td>GPL4133</td>
+											<td>The inflammatory response of human airway smooth muscle cells</td>
+											</tr>
+											<tr>
+											<td>GSE32537</td>
+											<td>23783374</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">217</td>
+											<td align="right">216</td>
+											<td>GPL6244</td>
+											<td>Molecular phenotyping of the idiopathic interstitial pneumonias [mRNA]</td>
+											</tr>
+											<tr>
+											<td>GSE49072</td>
+											<td>23924348</td>
+											<td>IPF</td>
+											<td>Alveolar macrophage</td>
+											<td align="right">84</td>
+											<td align="right">83</td>
+											<td>GPL96</td>
+											<td>Alveolar Macrophage Gene Expression in Human Pulmonary Fibrosis</td>
+											</tr>
+											<tr>
+											<td>GSE27957</td>
+											<td>24089408</td>
+											<td>IPF</td>
+											<td>PBMC</td>
+											<td align="right">45</td>
+											<td align="right">136</td>
+											<td>GPL5175</td>
+											<td>Peripheral Blood Mononuclear Cell Gene Expression Profiles May Predict Poor Outcome in Idiopathic Pulmonary Fibrosis</td>
+											</tr>
+											<tr>
+											<td>GSE28042</td>
+											<td>24089408</td>
+											<td>IPF</td>
+											<td>PBMC</td>
+											<td align="right">94</td>
+											<td align="right">136</td>
+											<td>GPL6480</td>
+											<td>Peripheral Blood Mononuclear Cell Gene Expression Profiles May Predict Poor Outcome in Idiopathic Pulmonary Fibrosis</td>
+											</tr>
+											<tr>
+											<td>GSE56341</td>
+											<td>24298892</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">22</td>
+											<td align="right">21</td>
+											<td>GPL6244</td>
+											<td>Gene expression profiles of COPD and nonCOPD small airway epithelia</td>
+											</tr>
+											<tr>
+											<td>GSE33337</td>
+											<td>24479666</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">8</td>
+											<td align="right">6</td>
+											<td>GPL6947</td>
+											<td>miRNA changes in mild and moderate emphysema correlate with target gene expression in vivo and in vitro [target gene expression data]</td>
+											</tr>
+											<tr>
+											<td>GSE47718</td>
+											<td>24498427</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">17</td>
+											<td align="right">16</td>
+											<td>GPL11154</td>
+											<td>Smoking Dysregulates the Human Airway Basal Cell Transcriptome at COPD-linked Risk Locus 19q13.2</td>
+											</tr>
+											<tr>
+											<td>GSE46903</td>
+											<td>24530056</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">384</td>
+											<td align="right">383</td>
+											<td>GPL6947</td>
+											<td>Transcriptome-based network analysis reveals a spectrum model of human macrophage activation [Expression]</td>
+											</tr>
+											<tr>
+											<td>GSE45686</td>
+											<td>24590289</td>
+											<td>IPF</td>
+											<td>Fibroblasts</td>
+											<td align="right">40</td>
+											<td align="right">38</td>
+											<td>GPL10558</td>
+											<td>An extracellular matrix-driven positive feedback loop regulates translation in Idiopathic Pulmonary Fibrosis</td>
+											</tr>
+											<tr>
+											<td>GSE52463</td>
+											<td>24647608</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">15</td>
+											<td align="right">14</td>
+											<td>GPL11154</td>
+											<td>Transcriptome analysis reveals differential splicing events in IPF lung tissue</td>
+											</tr>
+											<tr>
+											<td>GSE55962</td>
+											<td>24830457</td>
+											<td>COPD</td>
+											<td>Leukocytes</td>
+											<td align="right">106</td>
+											<td align="right">105</td>
+											<td>GPL13667</td>
+											<td>Systemic inflammatory response to smoking in chronic obstructive pulmonary disease: evidence of a gender effect</td>
+											</tr>
+											<tr>
+											<td>GSE47929</td>
+											<td>24994897</td>
+											<td>COPD</td>
+											<td>Siglec cell lines</td>
+											<td align="right">4</td>
+											<td align="right">3</td>
+											<td>GPL570</td>
+											<td>Gene expression profiles of Siglec-14/THP-1 and Siglec-5/THP cell lines, with or without NTHi stimulation</td>
+											</tr>
+											<tr>
+											<td>GSE53845</td>
+											<td>25217476</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">48</td>
+											<td align="right">94</td>
+											<td>GPL6480</td>
+											<td>40 IPF patients and 8 healthy controls</td>
+											</tr>
+											<tr>
+											<td>GSE52612</td>
+											<td>25260753</td>
+											<td>IPF</td>
+											<td>Fibroblasts</td>
+											<td align="right">8</td>
+											<td align="right">7</td>
+											<td>GPL13607</td>
+											<td>Forkhead Box F1 (FOXF1) represses fibroblast functions relevant to fibrogenesis</td>
+											</tr>
+											<tr>
+											<td>GSE34562</td>
+											<td>25390970</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">6</td>
+											<td align="right">5</td>
+											<td>GPL10558</td>
+											<td>IL-6R identifies early differentiated human effector memory CD8+ T cells that potently expand and produce IL-2 and IL-13</td>
+											</tr>
+											<tr>
+											<td>GSE60399</td>
+											<td>25407108</td>
+											<td>COPD</td>
+											<td>PBMC</td>
+											<td align="right">5</td>
+											<td align="right">4</td>
+											<td>GPL18451</td>
+											<td>Expression analysis of stable chronic obstructive pulmonary disease and acute exacerbation of chronic obstructive pulmonary disease</td>
+											</tr>
+											<tr>
+											<td>GSE63073</td>
+											<td>25432663</td>
+											<td>COPD</td>
+											<td>RNA pool?</td>
+											<td align="right">42</td>
+											<td align="right">42</td>
+											<td>GPL3991</td>
+											<td>Genes related to emphysema are enriched for ubiquitination pathways</td>
+											</tr>
+											<tr>
+											<td>GSE62974</td>
+											<td>25569234</td>
+											<td>COPD</td>
+											<td> </td>
+											<td align="right">6</td>
+											<td align="right">5</td>
+											<td>GPL16791</td>
+											<td>RNA sequencing (RNA-SEQ) of EPAS1 knockdown by siRNA in endothelial cells</td>
+											</tr>
+											<tr>
+											<td>GSE38958</td>
+											<td>26286721</td>
+											<td>IPF</td>
+											<td>PBMC</td>
+											<td align="right">115</td>
+											<td align="right">114</td>
+											<td>GPL5175</td>
+											<td>Profiling of Gene Expression in Idiopathic Pulmonary Fibrosis</td>
+											</tr>
+											<tr>
+											<td>GSE69134</td>
+											<td>26416856</td>
+											<td>COPD</td>
+											<td>A549 cell with Haemophilus influenzae</td>
+											<td align="right">8</td>
+											<td align="right">7</td>
+											<td>GPL887</td>
+											<td>Genome expression profiling identifies host-directed antimicrobial drugs against respiratory infection by nontypable Haemophilus influenzae</td>
+											</tr>
+											<tr>
+											<td>GSE69557</td>
+											<td>26436997</td>
+											<td>COPD</td>
+											<td>Hematopoietic stem cells</td>
+											<td align="right">4</td>
+											<td align="right">3</td>
+											<td>GPL6244</td>
+											<td>CD34+DNAMbrightCXCR4+ CLP mobilized in chronic inflammation</td>
+											</tr>
+											<tr>
+											<td>GSE69764</td>
+											<td>26442443</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">6</td>
+											<td align="right">5</td>
+											<td>GPL570</td>
+											<td>Identification of the gene expression in IPF lung fibroblasts after demethylation</td>
+											</tr>
+											<tr>
+											<td>GSE72073</td>
+											<td>26453058</td>
+											<td>IPF</td>
+											<td>Lung tissue</td>
+											<td align="right">8</td>
+											<td align="right">7</td>
+											<td>GPL17586</td>
+											<td>Expression data from lung tissues of IPF patients and Normal Control</td>
+											</tr>
+											<tr>
+											<td>GSE69818</td>
+											<td>26735770</td>
+											<td>COPD</td>
+											<td>Lung tissue</td>
+											<td align="right">70</td>
+											<td align="right">69</td>
+											<td>GPL13667</td>
+											<td>COPD lung tissue expression</td>
+											</tr>
+											<tr>
+											<td>GSE76705</td>
+											<td>26773458</td>
+											<td>COPD</td>
+											<td>Whole blood / PBMC</td>
+											<td align="right">229</td>
+											<td align="right">228</td>
+											<td>GPL570</td>
+											<td>Complex Disease Subtypes Identified by Network-Based Clustering of Gene Expression Data: Application to COPD</td>
+											</tr>
+											<tr>
+											<td>GSE81614</td>
+											<td>27515817</td>
+											<td>COPD</td>
+											<td>HepG2 cells</td>
+											<td align="right">16</td>
+											<td align="right">14</td>
+											<td>GPL10558</td>
+											<td>Novel RNA-binding activity of NQO1 promotes SERPINA1 mRNA translation</td>
+											</tr>
+											<tr>
+											<td>GSE73854</td>
+											<td>27869174</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">8</td>
+											<td align="right">7</td>
+											<td>GPL570</td>
+											<td>Developmental programming in Idiopathic pulmonary fibrosis (IPF)</td>
+											</tr>
+											<tr>
+											<td>GSE87098</td>
+											<td>27894999</td>
+											<td>COPD</td>
+											<td>Epithelial cells on-chip</td>
+											<td align="right">15</td>
+											<td align="right">14</td>
+											<td>GPL16686</td>
+											<td>Expression data of mucociliated human airway epithelia on-chip with or without exposure to whole cigarette smoke under physiological breathing</td>
+											</tr>
+											<tr>
+											<td>GSE71351</td>
+											<td>28057004</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">12</td>
+											<td align="right">11</td>
+											<td>GPL10558</td>
+											<td>Global Gene Expression Profiles of Fibroblasts from the Lungs of Patients with Idiopathic Pulmonary Fibrosis: The Role of CCL8</td>
+											</tr>
+											<tr>
+											<td>GSE94060</td>
+											<td>28463231</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">9</td>
+											<td align="right">8</td>
+											<td>GPL6244</td>
+											<td>Human lung MPC</td>
+											</tr>
+											<tr>
+											<td>GSE101286</td>
+											<td>28821283</td>
+											<td>IPF</td>
+											<td> </td>
+											<td align="right">15</td>
+											<td align="right">14</td>
+											<td>GPL6947</td>
+											<td>Gene expression profiling of idiopathic interstitial pneumonias (IIPs): identification of potential diagnostic markers and therapeutic targets</td>
+											</tr>
+											<tr>
+											<td>GSE27597</td>
+											<td>22937864, 24380442</td>
+											<td>COPD</td>
+											<td>Fibroblasts</td>
+											<td align="right">8</td>
+											<td align="right">70</td>
+											<td>GPL13243</td>
+											<td>A gene expression signature of emphysema-related lung destruction and its reversal by the tripeptide GHK.</td>
+											</tr>
+											<tr>
+											<td>GSE27597</td>
+											<td>22937864, 24380443</td>
+											<td>COPD</td>
+											<td>Lung Tissue</td>
+											<td align="right">64</td>
+											<td align="right">70</td>
+											<td>GPL5175</td>
+											<td>A gene expression signature of emphysema-related lung destruction and its reversal by the tripeptide GHK.</td>
+											</tr>
+											<tr>
+											<td>GSE57148</td>
+											<td>25834810, 29871630</td>
+											<td>COPD</td>
+											<td>Lung tissue</td>
+											<td align="right">189</td>
+											<td align="right">186</td>
+											<td>GPL11154</td>
+											<td>Characterizing gene expression in lung tissue of COPD subjects using RNA-seq</td>
+											</tr>
+											<tr>
+											<td>GSE47460</td>
+											<td>29988126, 27609773</td>
+											<td>COPD</td>
+											<td>Whole lung homogenate</td>
+											<td align="right">582</td>
+											<td align="right">581</td>
+											<td>GPL6479</td>
+											<td>Gene expression profiling of chronic lung disease for the Lung Genomics Research Consortium</td>
+											</tr>
+											<tr>
+											<td>GSE47460</td>
+											<td>29988126, 27609774</td>
+											<td>COPD</td>
+											<td>Whole lung homogenate</td>
+											<td align="right">582</td>
+											<td align="right">581</td>
+											<td>GPL14549</td>
+											<td>Gene expression profiling of chronic lung disease for the Lung Genomics Research Consortium</td>
+											</tr>
+											<tr>
+											<td>GSE77344</td>
+											<td>http://dx.doi.org/10.1101/038794</td>
+											<td>COPD</td>
+											<td>Complete blood counts (including leukocyte differentials) were available for all blood samples and used as an independent measure of blood composition (excluding lymphocyte subtypes)</td>
+											<td align="right">172</td>
+											<td align="right">171</td>
+											<td>GPL11532</td>
+											<td>Gene expression in chronic obstructive pulmonary disease (COPD) patients</td>
+											</tr>
+											<tr>
+											<td>GSE107426</td>
+											<td>NA</td>
+											<td>COPD</td>
+											<td>Blood samples pooled</td>
+											<td align="right">2</td>
+											<td align="right">1</td>
+											<td>GPL16956</td>
+											<td>Results of differentially expressed lncRNAs in COPD and healthy smoker using the Arraystar Human LncRNA Microarray</td>
+											</tr>
+											<tr>
+											<td>GSE30027</td>
+											<td>NA</td>
+											<td>COPD</td>
+											<td>non-naive peripheral blood CD8+ T cells from COPD, memory-type lung CD8+ T cells from COPD, effector-type lung CD8+ T cells from COPD, mix of naive peripheral blood CD8+ T cells from healthy donors</td>
+											<td align="right">12</td>
+											<td align="right">11</td>
+											<td>GPL6947</td>
+											<td>Human lung CD8+ T cells compared with paired non-naive peripheral blood CD8+ T cells</td>
+											</tr>
+											<tr>
+											<td>GSE31934</td>
+											<td>NA</td>
+											<td>IPF</td>
+											<td>Lung tissue</td>
+											<td align="right">6</td>
+											<td align="right">5</td>
+											<td>GPL11097</td>
+											<td>To examine the expression of Sulf1 and Sulf2, as well as other glycan-related genes, in human Idiopathic pulmonary fibrosis (IPF) lungs compared to normal lung samples</td>
+											</tr>
+											<tr>
+											<td>GSE37768</td>
+											<td>NA</td>
+											<td>COPD</td>
+											<td>Lung tissue</td>
+											<td align="right">38</td>
+											<td align="right">37</td>
+											<td>GPL570</td>
+											<td>Expression data in lung tissue from moderate COPD patients, healthy smokers and nonsmokers</td>
+											</tr>
+											<tr>
+											<td>GSE475</td>
+											<td>NA</td>
+											<td>COPD</td>
+											<td>Diaphragm muscles</td>
+											<td align="right">7</td>
+											<td align="right">6</td>
+											<td>GPL96</td>
+											<td>Chronic obstructive pulmonary disease</td>
+											</tr>
+											<tr>
+											<td>GSE56766</td>
+											<td>NA</td>
+											<td>COPD</td>
+											<td>Whole blood</td>
+											<td align="right">206</td>
+											<td align="right">431</td>
+											<td>GPL570</td>
+											<td>Whole blood and isolated blood cell transcriptomics in COPD</td>
+											</tr>
+											<tr>
+											<td>GSE56767</td>
+											<td>NA</td>
+											<td>COPD</td>
+											<td>Whole blood</td>
+											<td align="right">229</td>
+											<td align="right">431</td>
+											<td>GPL570</td>
+											<td>Whole blood and isolated blood cell transcriptomics in COPD</td>
+											</tr>
+											</tbody></table>
+
+
+	<script>
+$(document).ready( function () {
+	$('#myTable').DataTable();
+} );
+	</script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PulmonDB(GSEXX)</title>
+<link href="clustergrammer-master/lib/css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Dosis|Quicksand" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+
+	<div id="main" class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 navigation" style="margin-top: 40px">
+				<div class="col-md-1"></div>
+				<div class="col-md-2">
+					<img src="images/PulmonDB.png" style="vertical-align: middle;" width="90%">
+				</div>
+
+				<div class="col-md-4">
+
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="index.html">
+						Home
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="GSE_selection.html">
+						Input Data
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="pages/about.html">
+						About
+					</a>
+				</div>
+
+				<div class="col-md-1" style="border-right: 2px solid #f95050;">
+					<a href="pages/team.html">
+						The Team
+					</a>
+				</div>
+
+				<div class="col-md-1"></div>
+			</div>
+		</div>
+
+		<div class="divform" style="margin-top: 100px">
+			<div style="padding-left: 15px">
+				<div>
+					<form action="../cgi-bin/heatmap.py" method="get">
+						<br>
+						<div class="inputTitle">
+							GSE:
+						</div>
+
+						<textarea  rows="4" style="width:90%; border-radius: 10px; height: 72px" name="gse"></textarea>
+
+
+						<br>
+						<br>
+						<div class="inputTitle">
+							GENE:
+						</div>
+
+	 					<textarea  rows="4" style="width:90%; border-radius: 10px; height: 72px" name="gene"></textarea>
+
+						<br>
+						<br>
+
+						<input class="btnSubmit" type="submit" value="Submit" />
+					</form>
+				</div>
+ 			</div>
+ 		</div>
+	</div>
+
+
+
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="clustergrammer-master/lib/js/bootstrap.min.js"></script>
+
+
+
+
+</body>
+
+</html>

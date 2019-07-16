@@ -1,0 +1,29 @@
+<html>
+    <head>
+    </head>
+    <body>
+
+
+        <div id="app">
+            <lable>Choose a fruit!</lable>
+            <vue-multi-select
+        	    v-model="fruit"
+        	    :options="fruits"
+            ></vue-multi-select>
+        </div>
+
+
+        <script src="https://unpkg.com/vue@latest"></script>
+        <script src="https://unpkg.com/vue-simple-multi-select@latest"></script>
+        <script>
+         new Vue({
+             el:"#app",
+             data: {
+                 fruit: null,
+                 fruits: ['peach','pear','apple','orange']
+             }
+         });
+        </script>
+
+    </body>
+</html>

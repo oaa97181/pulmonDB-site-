@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+
+
+
+
+
+
+<link rel="stylesheet" href="awesomplete.css" />
+
+<script src="awesomplete.js"></script>
+<script src="index.js"></script>
+
+
+
+
+
+
+
+ <input data-list="CSS, JavaScript, HTML, SVG, ARIA, MathML" data-multiple data-minchars="1" />
+<script>new Awesomplete('input[data-multiple]', {
+	filter: function(text, input) {
+		return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
+	},
+
+	item: function(text, input) {
+		return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0]);
+	},
+
+	replace: function(text) {
+		var before = this.input.value.match(/^.+,\s*|/)[0];
+		this.input.value = before + text + ", ";
+	}
+});</script>
+
+
+
+
+ <input data-list="hola, soy, yola" data-multiple2 data-minchars="1" />
+<script>new Awesomplete('input[data-multiple2]', {
+	filter: function(text, input) {
+		return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
+	},
+
+	item: function(text, input) {
+		return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0]);
+	},
+
+	replace: function(text) {
+		var before = this.input.value.match(/^.+,\s*|/)[0];
+		this.input.value = before + text + ", ";
+	}
+});</script>

@@ -9,6 +9,15 @@
 <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
 
 
+
+  <!–– AWESOMPLETE ––> 
+<link rel="stylesheet" href="pulmonDB awesomplete/awesomplete.css" />
+<script src="pulmonDB awesomplete/awesomplete.js"></script>
+<script src="pulmonDB awesomplete/index.js"></script>
+
+
+
+
 <script type="text/javascript">
 
 	function demo1(){
@@ -92,7 +101,23 @@
 							GSE:
 						</div>
 
-						<textarea  rows="4" style="width:90%; border-radius: 10px; height: 72px" name="gse" id="gse"></textarea>
+						  <!––							 AWESOMPLETE					 ––> 
+						 <input data-list="GSE101286 , gseXX" data-multiple data-minchars="1" rows="4" style="width:450%; border-radius: 10px; height: 72px" name="gse" id="gse"/>
+
+						<script>new Awesomplete('input[data-multiple]', {
+							filter: function(text, input) {
+								return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
+							},
+
+							item: function(text, input) {
+								return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0]);
+							},
+
+							replace: function(text) {
+								var before = this.input.value.match(/^.+,\s*|/)[0];
+								this.input.value = before + text + ", ";
+							}
+						});</script>
 
 
 
@@ -102,7 +127,27 @@
 							GENE:
 						</div>
 
-	 					<textarea  rows="4" style="width:90%; border-radius: 10px; height: 72px" name="gene" id="gene"></textarea>
+
+
+						  <!––							 AWESOMPLETE					 ––> 
+						<input data-list="MMP1,MMP7,JUND" data-multiple2 data-minchars="1" rows="4" style="width:450%; border-radius: 10px; height: 72px" name="gene" id="gene"/>
+
+						<script>new Awesomplete('input[data-multiple2]', {
+							filter: function(text, input) {
+								return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
+							},
+
+							item: function(text, input) {
+								return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0]);
+							},
+
+							replace: function(text) {
+								var before = this.input.value.match(/^.+,\s*|/)[0];
+								this.input.value = before + text + ", ";
+							}
+						});</script>
+
+
 
 						<br>
 						<br>

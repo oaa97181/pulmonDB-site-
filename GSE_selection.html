@@ -20,11 +20,27 @@
 
 <script type="text/javascript">
 
+
+
+	//window.onload = alert(localStorage.getItem("IPF"));
+
 	function demo1(){
 			//alert("hola");
 			document.getElementById("gse").value = "GSE101286";
 			document.getElementById("gene").value = "MMP1,MMP7,JUND";
 
+	}
+
+	window.onload = function lungdiseases(){
+		if (localStorage.IPF) {
+			document.getElementById("gse").value = "GSE32537,GSE21369,GSE24206,GSE94060,GSE72073,GSE35145,GSE31934,GSE52453";
+			document.getElementById("gene").value = "CCL18,CXCL12,CXCL13,COL1A1,COL1A2,COL3A1,COL5A2,COL14A1,DSP,FAS,MMP1,MMP2,MMP7,MUC5B,SPP1,PTGS2,TGFB1,THY1";
+			localStorage.clear();
+		} else if (localStorage.COPD) {
+			document.getElementById("gse").value = "GSE27597,GSE37768,GSE57148,GSE8581,GSE1122";
+			document.getElementById("gene").value = "MMP12,HHIP,MMP9,GATA2,CFTR,PPARG,TNF,TGFBR3,MYH10,JUND,JUN,JUNB,SERPINA1,CHRNA3,CHRNA5,FAM13A";
+			localStorage.clear();
+		}
 	}
 
 </script>
@@ -102,9 +118,9 @@
 						</div>
 
 						  <!––							 AWESOMPLETE					 ––> 
-						 <input data-list="GSE101286 , gseXX" data-multiple data-minchars="1" rows="4" style="width:450%; border-radius: 10px; height: 72px" name="gse" id="gse"/>
+						 <input data-list="GSE10038,GSE107426,GSE10896,GSE1122,GSE12815,GSE13896,GSE1650,GSE16972,GSE2125,GSE23704,GSE26296,GSE27536,GSE27543,GSE27597,GSE29133,GSE30027,GSE33337,GSE34562,GSE37147,GSE37693,GSE37768,GSE40885,GSE45251,GSE46903,GSE47460,GSE475,GSE47718,GSE47929,GSE55962,GSE56341,GSE56768,GSE56768,GSE57148,GSE60399,GSE62974,GSE63073,GSE69134,GSE69557,GSE69818,GSE7557,GSE76705,GSE77344,GSE81614,GSE8581,GSE8608,GSE87098,GSE994,GSE1786,GSE101286,GSE11196,GSE15197,GSE19976,GSE21369,GSE24206,GSE26594,GSE28221,GSE31934,GSE32537,GSE33566,GSE35145,GSE38958,GSE44723,GSE45686,GSE48149,GSE49072,GSE52463,GSE52612,GSE53845,GSE5457,GSE6804,GSE69764,GSE71351,GSE72073,GSE73854,GSE94060,GSE38934" data-multiple data-minchars="1" rows="4" style="width:450%; border-radius: 10px; height: 72px" name="gse" id="gse"/>
 
-						<script>new Awesomplete('input[data-multiple]', {
+						<script>new Awesomplete('input[data-multiple]' , {
 							filter: function(text, input) {
 								return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
 							},
@@ -130,7 +146,7 @@
 
 
 						  <!––							 AWESOMPLETE					 ––> 
-						<input data-list="MMP1,MMP7,JUND" data-multiple2 data-minchars="1" rows="4" style="width:450%; border-radius: 10px; height: 72px" name="gene" id="gene"/>
+						<input data-list="MMP1,MMP7,JUND" data-multiple2 data-minchars="1" rows="40" style="width:450%; border-radius: 10px; height: 72px" name="gene" id="gene"/>
 
 						<script>new Awesomplete('input[data-multiple2]', {
 							filter: function(text, input) {

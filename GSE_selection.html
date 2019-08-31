@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>PulmonDB(GSEXX)</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
 <link href="clustergrammer-master/lib/css/bootstrap.css" rel="stylesheet">
 <link href="css/style3.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Dosis|Quicksand" rel="stylesheet">
@@ -10,14 +13,15 @@
 
 
 
-  <!–– AWESOMPLETE ––> 
-<link rel="stylesheet" href="pulmonDB awesomplete/awesomplete.css" />
-<script src="pulmonDB awesomplete/awesomplete.js"></script>
-<script src="pulmonDB awesomplete/index.js"></script>
+<!-- JQUERY AUTOCOMPLETE -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="assets/jquery-ui/jquery-ui-1.12.1/jquery-ui.css" />
+<script src="assets/genes.js"></script>
+<script src="assets/gses.js"></script>
 
 
-
-
+ 
 <script type="text/javascript">
 
 
@@ -42,11 +46,7 @@
 			localStorage.clear();
 		}
 	}
-
 </script>
-
-
-
 </head>
 
 
@@ -117,25 +117,8 @@
 							GSE:
 						</div>
 
-						  <!––							 AWESOMPLETE					 ––> 
-						 <input data-list="GSE10038,GSE107426,GSE10896,GSE1122,GSE12815,GSE13896,GSE1650,GSE16972,GSE2125,GSE23704,GSE26296,GSE27536,GSE27543,GSE27597,GSE29133,GSE30027,GSE33337,GSE34562,GSE37147,GSE37693,GSE37768,GSE40885,GSE45251,GSE46903,GSE47460,GSE475,GSE47718,GSE47929,GSE55962,GSE56341,GSE56768,GSE56768,GSE57148,GSE60399,GSE62974,GSE63073,GSE69134,GSE69557,GSE69818,GSE7557,GSE76705,GSE77344,GSE81614,GSE8581,GSE8608,GSE87098,GSE994,GSE1786,GSE101286,GSE11196,GSE15197,GSE19976,GSE21369,GSE24206,GSE26594,GSE28221,GSE31934,GSE32537,GSE33566,GSE35145,GSE38958,GSE44723,GSE45686,GSE48149,GSE49072,GSE52463,GSE52612,GSE53845,GSE5457,GSE6804,GSE69764,GSE71351,GSE72073,GSE73854,GSE94060,GSE38934" data-multiple data-minchars="1" rows="4" style="width:450%; border-radius: 10px; height: 72px" name="gse" id="gse"/>
-
-						<script>new Awesomplete('input[data-multiple]' , {
-							filter: function(text, input) {
-								return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
-							},
-
-							item: function(text, input) {
-								return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0]);
-							},
-
-							replace: function(text) {
-								var before = this.input.value.match(/^.+,\s*|/)[0];
-								this.input.value = before + text + ", ";
-							}
-						});</script>
-
-
+						   <!––							 JQUERY AUTOCOMPLETE					 ––> 
+						 <input style="width:95%; border-radius: 10px; height: 72px" name="gse" id="gse"/>
 
 						<br>
 						<br>
@@ -145,23 +128,8 @@
 
 
 
-						  <!––							 AWESOMPLETE					 ––> 
-						<input data-list="MMP1,MMP7,JUND" data-multiple2 data-minchars="1" rows="40" style="width:450%; border-radius: 10px; height: 72px" name="gene" id="gene"/>
-
-						<script>new Awesomplete('input[data-multiple2]', {
-							filter: function(text, input) {
-								return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
-							},
-
-							item: function(text, input) {
-								return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0]);
-							},
-
-							replace: function(text) {
-								var before = this.input.value.match(/^.+,\s*|/)[0];
-								this.input.value = before + text + ", ";
-							}
-						});</script>
+						  <!––							 JQUERY AUTOCOMPLETE					 ––> 
+						<input style="width:95%; border-radius: 10px; height: 72px" name="gene" id="gene"/>
 
 
 
@@ -190,10 +158,13 @@ Vue.component('vue-multiselect', window.VueMultiselect.default)
 	</script>
 
 
- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <script src="clustergrammer-master/lib/js/bootstrap.min.js"></script>
 
 	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
+
 
 
 
@@ -1020,6 +991,9 @@ $(document).ready( function () {
 
 <br><br>
 <br>
+
+
+
 
 </body>
 
